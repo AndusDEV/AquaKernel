@@ -4,7 +4,7 @@
 ### With build Script:
 Go to `Using Scripts` 
 ### Manually:
-`$ cd kernel`
+`$ cd kernel`</br>
 `$ nasm -f elf32 kernel.asm -o k-asm.o`</br>
 `$ gcc -m32 -c kernel.c -o k-c.o`</br>
 `$ ld -m elf_i386 -T linker.ld -o kernel k-asm.o k-c.o`
