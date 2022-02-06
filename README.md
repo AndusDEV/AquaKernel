@@ -12,11 +12,11 @@ Go to `Using Scripts`
 ## Using Scripts:
 ### Cleaning Script:
 `$ cd scripts`</br>
-`$ chmod 755 cleanup.sh`</br>
+`$ chmod 755 cleanup.sh` (only once)</br>
 `$ ./cleanup.sh`
 ### Building Script (32-bit):
 `$ cd scripts`</br>
-`$ chmod 755 build-32.sh`</br>
+`$ chmod 755 build-32.sh` (only once)</br>
 `$ ./build-32.sh`
 
 ## Running:
