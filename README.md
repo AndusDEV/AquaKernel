@@ -1,4 +1,5 @@
 # Aqua Kernel
+Version 0.0.1
 
 ## Building Instructions:
 ### With build Script:

@@ -1,5 +1,5 @@
 #define DGRAY_TXT 0x07
-#define AQUA_TXT 0x0b
+#define CYAN_TXT 0x0b
 #define WHITE_TXT 0x0f
 
 #define VERSION "0.0.1"
@@ -25,6 +25,8 @@ void clear_screen() {
 	};
 };
 
+// Method for color will be better. e.x. prnt("&7Welcome to\n&bAqua Kernel!", 0);
+//                                        &7 = Gray   \n = New Line   &b = Cyan
 unsigned int prnt(char *color, char *message, unsigned int line) {
 	char *vidmem = (char *) 0xb8000;
 	unsigned int i=0;
@@ -41,7 +43,7 @@ unsigned int prnt(char *color, char *message, unsigned int line) {
 			*message++;
 			i++;
 			if (*color=='b') {
-				vidmem[i]=AQUA_TXT;
+				vidmem[i]=CYAN_TXT;
 			} else if (*color=='7') {
 				vidmem[i]=DGRAY_TXT;
 			} else if (*color=='f') {
