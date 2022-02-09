@@ -9,7 +9,7 @@ Version 0.0.1
 - Make (For automatization)
 - Qemu (For running as VM)
 ### With build Script:
-Go to `Using Scripts` 
+Go to <a href="#using-scripts">Using Scripts</a> 
 ### Manually:
 `$ cd kernel`</br>
 `$ nasm -f elf32 kernel.asm -o k-asm.o`</br>
