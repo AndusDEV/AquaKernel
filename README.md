@@ -2,6 +2,12 @@
 Version 0.0.1
 
 ## Building Instructions:
+### Requirements:
+- NASM
+- gcc
+- GRUB
+- Make (For automatization)
+- Qemu (For running as VM)
 ### With build Script:
 Go to `Using Scripts` 
 ### Manually:

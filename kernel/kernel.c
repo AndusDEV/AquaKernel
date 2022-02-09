@@ -1,6 +1,21 @@
-#define DGRAY_TXT 0x07
-#define CYAN_TXT 0x0b
-#define WHITE_TXT 0x0f
+#include "./drivers/keyboard.c"
+
+#define BLACK_CLR 0x00
+#define BLUE_CLR 0x01
+#define GREEN_CLR 0x02
+#define CYAN_CLR 0x03
+#define RED_CLR 0x04
+#define MAGENTA_CLR 0x05
+#define BROWN_CLR 0x06
+#define LGRAY_CLR 0x07
+#define DGRAY_CLR 0x08
+#define LBLUE_CLR 0x09
+#define LGREEN_CLR 0x0a
+#define LCYAN_CLR 0x0b
+#define LRED_CLR 0x0c
+#define LMAGENTA_CLR 0x0d
+#define YELLOW_CLR 0x0e
+#define WHITE_CLR 0x0f
 
 #define VERSION "0.0.1"
 
@@ -12,6 +27,9 @@ void kernel_main() {
 	prnt("7", "Welcome to", 0);
 	prnt("b", "Aqua Kernel!", 1);
 	prnt("f", "This is a test of version: 0.0.1", 3);
+	prnt("A", "Type \'h\' to see all commands", 5);
+
+
 };
 
 void clear_screen() {
@@ -20,7 +38,7 @@ void clear_screen() {
 	while(i < (80*25*2)) {
 		vidmem[i]=' ';
 		i++;
-		vidmem[i]=WHITE_TXT;
+		vidmem[i]=WHITE_CLR;
 		i++;
 	};
 };
@@ -42,12 +60,38 @@ unsigned int prnt(char *color, char *message, unsigned int line) {
 			vidmem[i] = *message;
 			*message++;
 			i++;
-			if (*color=='b') {
-				vidmem[i]=CYAN_TXT;
+			if (*color=='0') {
+				vidmem[i]=BLACK_CLR;
+			} else if (*color=='1') {
+				vidmem[i]=BLUE_CLR;
+			} else if (*color=='2') {
+				vidmem[i]=GREEN_CLR;
+			} else if (*color=='3') {
+				vidmem[i]=CYAN_CLR;
+			} else if (*color=='4') {
+				vidmem[i]=RED_CLR;
+			} else if (*color=='5') {
+				vidmem[i]=MAGENTA_CLR;
+			} else if (*color=='6') {
+				vidmem[i]=BROWN_CLR;
 			} else if (*color=='7') {
-				vidmem[i]=DGRAY_TXT;
+				vidmem[i]=LGRAY_CLR;
+			} else if (*color=='8') {
+				vidmem[i]=DGRAY_CLR;
+			} else if (*color=='9') {
+				vidmem[i]=LBLUE_CLR;
+			} else if (*color=='a') {
+				vidmem[i]=LGREEN_CLR;
+			} else if (*color=='b') {
+				vidmem[i]=LCYAN_CLR;
+			} else if (*color=='c') {
+				vidmem[i]=LRED_CLR;
+			} else if (*color=='d') {
+				vidmem[i]=LMAGENTA_CLR;
+			} else if (*color=='e') {
+				vidmem[i]=YELLOW_CLR;
 			} else if (*color=='f') {
-				vidmem[i]=WHITE_TXT;
+				vidmem[i]=WHITE_CLR;
 			}
 			i++;
 		};
