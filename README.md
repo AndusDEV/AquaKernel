@@ -12,8 +12,9 @@ Version 0.0.1
 ### Manually:
 `$ cd kernel`</br>
 `$ nasm -f elf32 ./kernel/kernel.asm -o ./build/files/k-asm.o`</br>
+`$ nasm -f elf32 ./kernel/header.asm -o ./build/files/header.o`</br>
 `$ gcc -m32 -c ./kernel/kernel.c -o ./build/files/k-c.o`</br>
-`$ ld -m elf_i386 -T ./kernel/linker.ld -o ./build/files/kernel ./build/files/k-asm.o ./build/files/k-c.o`
+`$ ld -m elf_i386 -T ./kernel/linker.ld -o ./build/kernel/kernel.bin ./build/files/header.o ./build/files/k-asm.o ./build/files/k-c.o`
 
 ### With Make:
 (You must be in Root Directory)
@@ -27,7 +28,7 @@ Clean: `$ make clean`
 Emulate: `$ make emulate`
 
 ### With build Script:
-Go to <a href="#using-scripts">Using Scripts</a> 
+Go to <a href="#using-scripts">Using Scripts</a>
 
 ## Using Scripts:
 ### Cleaning Script:

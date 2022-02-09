@@ -1,2 +1,4 @@
 *.o
-build/files/
+build/files/*
+build/kernel/*
+build/iso/boot/iso/*
