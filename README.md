@@ -8,13 +8,26 @@ Version 0.0.1
 - GRUB
 - Make (For automatization)
 - Qemu (For running as VM)
-### With build Script:
-Go to <a href="#using-scripts">Using Scripts</a> 
+
 ### Manually:
 `$ cd kernel`</br>
-`$ nasm -f elf32 kernel.asm -o k-asm.o`</br>
-`$ gcc -m32 -c kernel.c -o k-c.o`</br>
-`$ ld -m elf_i386 -T linker.ld -o kernel k-asm.o k-c.o`
+`$ nasm -f elf32 ./kernel/kernel.asm -o ./build/files/k-asm.o`</br>
+`$ gcc -m32 -c ./kernel/kernel.c -o ./build/files/k-c.o`</br>
+`$ ld -m elf_i386 -T ./kernel/linker.ld -o ./build/files/kernel ./build/files/k-asm.o ./build/files/k-c.o`
+
+### With Make:
+(You must be in Root Directory)
+
+Build:</br>
+- Kernel: `$ make kernel`
+- Image (ISO): `$ make image`
+
+Clean: `$ make clean`
+
+Emulate: `$ make emulate`
+
+### With build Script:
+Go to <a href="#using-scripts">Using Scripts</a> 
 
 ## Using Scripts:
 ### Cleaning Script:
@@ -28,7 +41,7 @@ Go to <a href="#using-scripts">Using Scripts</a>
 
 ## Running:
 ### Qemu:
-`$ qemu-system-i386 -kernel kernel`
+`$ qemu-system-i386 -kernel kernel` or `$ make emulate`
 ### Real Hardware:
 (Not planned for now)
 Flash to USB with for e.x. <a href="https://www.balena.io/etcher/">BalenaEtcher</a>

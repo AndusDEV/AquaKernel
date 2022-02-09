@@ -1,5 +1,3 @@
-#include "./drivers/keyboard.c"
-
 #define BLACK_CLR 0x00
 #define BLUE_CLR 0x01
 #define GREEN_CLR 0x02
@@ -28,8 +26,6 @@ void kernel_main() {
 	prnt("b", "Aqua Kernel!", 1);
 	prnt("f", "This is a test of version: 0.0.1", 3);
 	prnt("A", "Type \'h\' to see all commands", 5);
-
-
 };
 
 void clear_screen() {
