@@ -15,8 +15,8 @@ kernel:
 	@echo "Trying to build Kernel"
 	@echo "Make sure all the Dependencies are installed!"
 	make clean
-	nasm -f elf32 ./kernel/kernel.asm -o ./build/files/k-asm.o
 	nasm -f elf32 ./kernel/header.asm -o ./build/files/header.o
+	nasm -f elf32 ./kernel/kernel.asm -o ./build/files/k-asm.o
 	gcc -m32 -c ./kernel/kernel.c -o ./build/files/k-c.o
 	ld -m elf_i386 -T ./kernel/linker.ld -o ./build/kernel/kernel.bin ./build/files/header.o ./build/files/k-asm.o ./build/files/k-c.o
 
