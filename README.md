@@ -42,7 +42,10 @@ Go to <a href="#using-scripts">Using Scripts</a>
 
 ## Running:
 ### Qemu:
-`$ qemu-system-i386 -kernel ./build/files/kernel` or `$ make emulate`
+#### Kernel:
+`$ qemu-system-i386 -kernel ./build/files/kernel.bin` or `$ make emulate`
+#### ISO:
+`$ qemu-system-i386 -cdrom ./build/files/kernel.iso` or `$ make emulate-iso`
 ### Real Hardware:
 (Not planned for now)
 Flash to USB with for e.x. <a href="https://www.balena.io/etcher/">BalenaEtcher</a>

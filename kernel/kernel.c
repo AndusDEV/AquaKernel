@@ -20,12 +20,15 @@
 void clear_screen();
 unsigned int prnt(char *color, char *message, unsigned int line);
 
+/* Main Kernel */
 void kernel_main() {
 	clear_screen();
-	prnt("7", "Welcome to", 0);
-	prnt("b", "Aqua Kernel!", 1);
-	prnt("f", "This is a test of version: 0.0.1", 3);
-	prnt("A", "Type \'h\' to see all commands", 5);
+	prnt("3", "  ____     \n / __ \\__/\\ \n \\/ \\____/ ", 0);
+	prnt("7", "Welcome to", 3);
+	prnt("b", "Aqua Kernel!", 4);
+	prnt("f", "This is a test of version: 0.0.1", 6);
+	prnt("a", "Type \'h\' to see all commands", 7);
+	prnt("4", "Keyboard don\'t work now..", 8);
 };
 
 void clear_screen() {
